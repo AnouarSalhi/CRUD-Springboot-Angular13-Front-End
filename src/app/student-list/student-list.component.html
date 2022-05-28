@@ -1,0 +1,31 @@
+
+<div class="card mt-4">
+    <div class="card-header">
+       Students List
+    </div>
+
+    <div class="card-bodey">
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Name</th>
+          <th scope="col">email</th>
+          <th scope="col">Birthday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of students">
+          <th scope="row">{{s.id}}</th>
+          <td>{{s.name}}</td>
+          <td>{{s.email}}</td>
+          <td>{{s.birthday}}</td>
+          <td><a class="btn btn-primary" [routerLink]="['/updatestudent/',s.id]" >Edit</a></td>
+          <td><a class="btn btn-danger" (click)="deleteStudent(s.id)">Delete</a></td>
+
+        </tr>
+        
+      </tbody>
+  </table>
+    </div>
+</div>
